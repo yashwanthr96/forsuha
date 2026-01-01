@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Flower for You 🌷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="flower-page">
+
+  <div class="flower-card">
+    <span id="dateLabel" class="flower-date"></span>
+
+    <img id="flowerImg" class="flower-img" />
+
+    <p id="flowerText" class="flower-text"></p>
+
+    <button class="back-btn" onclick="goBack()">Back to Garden 🌸</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const day = params.get("day");
+
+    const messages = {
+      dec15: "Nuv us veltunnav already miss ayitunna🌸",
+      dec16: "Hope you are having a good time there 💕",
+      dec17: "healt chusko nanna manchiga",
+      dec18: "tablets marchipoku baby",
+      dec19: "a cute flower for my cutie",
+      dec20: "ivvala nik flower marchipoya anukunnava",
+      dec21: "ela undi mari na creativity",
+      dec22: "nen ninnu ghoram miss ayitunna",
+      dec23: "bouquet tisko nike",
+      dec24: "woww repe christmas ",
+      dec25: "Merry Christmas my darling",
+      dec26: "inka 23 days aagali ",
+      dec27: "inspired by pinterest kannaaaa",
+      dec28: "you are as beautiful as this nanna",
+      dec29: "roju full feelings teppistunnav",
+      dec30: "nuv lekunda tirugtunte masth weird undi",
+      dec31: "Ending the year with you in my heart",
+      jan01: "Starting the year thinking of you ✨",
+      jan02: "Still choosing you, every day",
+      jan03: "You make my heart feel safe",
+      jan04: "Another day, same feeling — you",
+      jan05: "Grateful for us",
+      jan06: "You’re my favorite constant",
+      jan07: "This day felt softer because of you",
+      jan08: "You make love feel easy",
+      jan09: "Just you. Always you.",
+      jan10: "You’re my happy place",
+      jan11: "Some feelings don’t fade",
+      jan12: "You make life gentler",
+      jan13: "Still smiling because of you",
+      jan14: "Every day with you matters",
+      jan15: "And I’d choose you all over again 💖"
+    };
+
+    document.getElementById("flowerImg").src =
+      `images/flowers/${day}.jpeg`;
+
+    document.getElementById("flowerText").innerText =
+      messages[day] || "You mean more to me than words can say 💗";
+
+    document.getElementById("dateLabel").innerText =
+      day.replace(/(dec|jan)(\d+)/i, (_, m, d) =>
+        `${m === "dec" ? "December" : "January"} ${d}`
+      );
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
