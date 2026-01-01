@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find the Cats 🐾</title>
+
+  <!-- Mobile first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/cats/cat1.png">
+  <link rel="preload" as="image" href="images/cats/cat2.png">
+  <link rel="preload" as="image" href="images/cats/cat3.png">
+  <link rel="preload" as="image" href="images/cats/cat4.png">
+
+</head>
+
+<body class="mobile">
+
+  <h1>Find all the cats 🐾</h1>
+  <p class="sub">Tap them to unlock something special 💕</p>
+
+  <!-- Cats will be injected here -->
+  <div id="playground"></div>
+
+  <p id="status"></p>
+
+  <script src="js/unlock.js"></script>
+</body>
+</html>
