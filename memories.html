@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Year 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* -------- PAGE BASE -------- */
+    body.memories-page {
+      margin: 0;
+      background: linear-gradient(135deg, #fff0f6, #fde2ff);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* -------- HORIZONTAL SCROLL -------- */
+    .scroll-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 80px 30px 140px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* -------- MEMORY CARD -------- */
+    .memory-card {
+      flex: 0 0 85vw;
+      max-width: 85vw;
+      scroll-snap-align: center;
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      background: #000;
+    }
+
+    /* 16:9 image handling */
+    .memory-card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* -------- NEW YEAR CARD -------- */
+    .new-year-card {
+      flex: 0 0 85vw;
+      max-width: 85vw;
+      scroll-snap-align: center;
+      background: rgba(255,255,255,0.85);
+      border-radius: 30px;
+      padding: 60px 30px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .new-year-card h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
+      color: #ff5fa2;
+      margin-bottom: 20px;
+    }
+
+    .new-year-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6a1b4d;
+    }
+
+    /* -------- MONTH INDICATOR -------- */
+    .month-indicator {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #ffffff;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    /* -------- GARDEN BUTTON -------- */
+    .garden-fixed-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff85c0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<script>
+  function playSurprise() {
+    const overlay = document.getElementById("videoOverlay");
+    const video = document.getElementById("surpriseVideo");
+
+    overlay.style.display = "flex";
+    video.play();
+  }
+
+  function closeVideo() {
+    const overlay = document.getElementById("videoOverlay");
+    const video = document.getElementById("surpriseVideo");
+
+    video.pause();
+    video.currentTime = 0;
+    overlay.style.display = "none";
+  }
+</script>
+
+
+<body class="memories-page">
+
+  <!-- SCROLL AREA -->
+  <div class="scroll-wrapper" id="scrollWrapper">
+
+    <div class="memory-card" data-month="January">
+      <img src="images/memories/jan.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="February">
+      <img src="images/memories/feb.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="March">
+      <img src="images/memories/mar.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="April">
+      <img src="images/memories/apr.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="May">
+      <img src="images/memories/may.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="June">
+      <img src="images/memories/jun.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="July">
+      <img src="images/memories/jul.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="August">
+      <img src="images/memories/aug.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="September">
+      <img src="images/memories/sep.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="October">
+      <img src="images/memories/oct.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="November">
+      <img src="images/memories/nov.jpeg">
+    </div>
+
+    <div class="memory-card" data-month="December">
+      <img src="images/memories/dec.jpeg">
+    </div>
+
+    <!-- 🎆 AFTER DECEMBER -->
+    <div class="new-year-card" id="newYearCard">
+  <h1>✨ Happy New Year suhhaaaa✨</h1>
+  <p>
+    Another year, another chapter —  
+    and I still choose you kanammaa💖
+  </p>
+
+  <button class="surprise-btn" onclick="playSurprise()">
+    Surprise ❤️
+  </button>
+</div>
+
+<!-- Hidden Video Overlay -->
+<div class="video-overlay" id="videoOverlay">
+  <video id="surpriseVideo" controls playsinline>
+    <source src="images/video/surprise.mp4" type="video/mp4">
+  </video>
+
+  <button class="close-video" onclick="closeVideo()">✕</button>
+</div>
+
+
+  </div>
+
+  <!-- MONTH NAME -->
+  <div class="month-indicator" id="monthIndicator"></div>
+
+  <!-- GARDEN BUTTON -->
+  <button class="garden-fixed-btn" onclick="goGarden()">
+    🌸 Garden
+  </button>
+
+  <script>
+    const cards = document.querySelectorAll(".memory-card");
+    const indicator = document.getElementById("monthIndicator");
+
+    const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.dataset.month) {
+          indicator.innerText = entry.target.dataset.month;
+          indicator.style.opacity = "1";
+        }
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+  const newYearCard = document.querySelector(".new-year-card");
+
+const nyObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        indicator.style.opacity = "0";
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+nyObserver.observe(newYearCard);
+
+
+    cards.forEach(card => observer.observe(card));
+
+    function goGarden() {
+      window.location.href = "garden.html";
+    }
+  </script>
+
+</body>
+</html>

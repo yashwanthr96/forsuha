@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Golden Garden 🌸</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="garden-page">
+
+  <h1 class="garden-title">   🌸 Golden Garden 🌸</h1>
+  <p class="garden-sub">     Every day bloomed with you</p>
+<div class="garden-calendar">
+
+  <h2 class="month-label">December</h2>
+  <div id="december" class="icon-grid"></div>
+
+  <h2 class="month-label">January</h2>
+  <div id="january" class="icon-grid"></div>
+
+</div>
+
+<script>
+  const potImage = "images/pots/pot.png";
+  const lockImage = "images/pots/lock.png"; // add this image
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  function createDay(containerId, label, key, unlockDate) {
+    const div = document.createElement("div");
+    div.className = "icon-item";
+
+    const img = document.createElement("img");
+    img.src = potImage;
+
+    const span = document.createElement("span");
+
+    const unlock = new Date(unlockDate);
+    unlock.setHours(0, 0, 0, 0);
+
+    if (today >= unlock) {
+      // ✅ UNLOCKED
+      img.onclick = () => openFlower(key);
+      span.innerText = label;
+      img.classList.add("unlocked");
+    } else {
+      // 🔒 LOCKED
+      img.classList.add("locked");
+      span.innerText = `Opens on ${label}`;
+
+      const lock = document.createElement("img");
+      lock.src = lockImage;
+      lock.className = "lock-icon";
+      div.appendChild(lock);
+    }
+
+    div.appendChild(img);
+    div.appendChild(span);
+    document.getElementById(containerId).appendChild(div);
+  }
+
+  // DECEMBER 15 → 31
+  for (let d = 15; d <= 31; d++) {
+    const day = d.toString().padStart(2, "0");
+    createDay(
+      "december",
+      `Dec ${d}`,
+      `dec${day}`,
+      `2025-12-${day}`
+    );
+  }
+
+  // JANUARY 1 → 15
+  for (let d = 1; d <= 15; d++) {
+    const day = d.toString().padStart(2, "0");
+    createDay(
+      "january",
+      `Jan ${day}`,
+      `jan${day}`,
+      `2026-01-${day}`
+    );
+  }
+
+  function openFlower(day) {
+    window.location.href = `flower.html?day=${day}`;
+  }
+
+  function goCutie() {
+    window.location.href = "memories.html";
+  }
+</script>
+
+
+
+  <button class="cutie-btn" onclick="goCutie()">
+    only cuties are allowed to click 💕
+  </button>
+
+  <script>
+    function openFlower(day) {
+      window.location.href = `flower.html?day=${day}`;
+    }
+
+    function goCutie() {
+      window.location.href = "memories.html";
+    }
+  </script>
+
+
+</body>
+</html>

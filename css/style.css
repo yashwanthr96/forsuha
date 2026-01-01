@@ -1,0 +1,433 @@
+:root {
+  --bg-pink: #fff0f6;
+  --soft-pink: #ffb3d9;
+  --rose: #ff85c0;
+  --lavender: #e6ccff;
+  --text-dark: #6a1b4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.mobile {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-pink), var(--lavender));
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  text-align: center;
+  overflow: hidden;
+  padding-top: 30px;
+}
+
+/* Lock width to phone feel */
+body.mobile {
+  max-width: 430px;
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.4rem;
+  margin-bottom: 5px;
+}
+
+.sub {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+/* Playground where cats roam */
+#playground {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 180px);
+}
+
+/* Cat images */
+.cat {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+
+.cat:hover {
+  transform: scale(1.15);
+}
+
+.cat.done {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Status text */
+#status {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--rose);
+  margin-top: 10px;
+}
+/* 🌸 Garden Calendar Layout */
+
+.garden-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.garden-title,
+.garden-sub {
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.month-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  margin: 25px 0 10px;
+  opacity: 0.85;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 85%;
+  background: rgba(255,255,255,0.7);
+  padding: 14px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease;
+}
+
+.day:hover {
+  transform: translateY(-4px);
+}
+
+.day img {
+  width: 60px;
+}
+
+.day span {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.cutie-btn {
+  margin: 40px auto;
+  display: block;
+  background: #ff85c0;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* 🌿 Garden Feel Background */
+.garden-page {
+  background: linear-gradient(
+      rgba(255, 240, 246, 0.9),
+      rgba(255, 240, 246, 0.9)
+    ),
+    url("images/garden-bg.png"); /* optional */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Month title */
+.month-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.9rem;
+  margin: 30px 0 15px;
+  opacity: 0.85;
+}
+
+/* Icon grid like reference image */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 10px;
+  padding: 0 25px;
+  margin-bottom: 25px;
+}
+
+/* Each icon item */
+.icon-item {
+  text-align: center;
+}
+
+/* Pot image ONLY clickable */
+.icon-item img {
+  width: 70px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.icon-item img:hover {
+  transform: scale(1.12);
+}
+
+/* Label */
+.icon-item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+/* 🌷 Flower Page */
+
+.flower-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff0f6, #fde2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.flower-card {
+  background: rgba(255,255,255,0.8);
+  border-radius: 30px;
+  padding: 30px 25px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  animation: fadeUp 0.8s ease;
+}
+
+.flower-date {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  opacity: 0.75;
+}
+
+.flower-img {
+  width: 220px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.flower-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 15px 0 25px;
+  color: #6a1b4d;
+}
+
+.back-btn {
+  background: #ff85c0;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.icon-item img {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-item img:not([onclick]) {
+  cursor: not-allowed;
+}
+/* 🔒 Locked Pot Styling */
+
+.icon-item {
+  position: relative;
+}
+
+/* Faded pot */
+.locked-pot {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Small lock on pot */
+.lock-icon {
+  position: absolute;
+  width: 9px;              /* SMALL lock */
+  top: 8px;                 /* sits on pot */
+  right: 30px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+/* 💖 Memories Page */
+
+.memories-page {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden; /* important */
+  background: linear-gradient(180deg, #fff0f6, #fde2ff);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Horizontal scroll container */
+.scroll-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* hide scrollbar */
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* 📱 Memory Cards */
+.memory-card {
+  flex: 0 0 80vw;          /* smaller than full screen */
+  height: 70vh;            /* controlled height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center;
+}
+
+/* Image styling */
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* maintains 1080x1920 feel */
+  border-radius: 24px;
+  aspect-ratio: 9 / 16;    /* 1080 x 1920 portrait */
+}
+
+
+/* straighten when centered */
+.memory-card:has(+ .memory-card) {
+  transform: rotate(-2deg);
+}
+
+/* New Year card */
+.new-year-card {
+  flex: 0 0 80%;
+  max-width: 80%;
+  height: 70vh;
+  background: linear-gradient(135deg, #ffb3d9, #e6ccff);
+  border-radius: 30px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+.new-year-card h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+}
+
+.new-year-card p {
+  font-size: 1.1rem;
+  max-width: 80%;
+}
+
+/* Month indicator */
+.month-indicator {
+  position: fixed;
+  bottom: 80px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* Fixed garden button */
+.garden-fixed-btn {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 133, 192, 0.9);
+  color: white;
+  border: none;
+  z-index: 1000;
+}
+
+.new-year-card {
+  scroll-snap-align: center;
+}
+
+.scroll-wrapper:has(.new-year-card:in-view) + .month-indicator {
+  opacity: 0;
+}
+
+/* ❤️ Surprise Button */
+.surprise-btn {
+  margin-top: 20px;
+  background: #ff85c0;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* 🎥 Video Overlay */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.video-overlay video {
+  width: 90%;
+  max-width: 420px;
+  border-radius: 15px;
+}
+
+.close-video {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
